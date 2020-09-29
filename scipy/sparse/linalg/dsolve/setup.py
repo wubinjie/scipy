@@ -1,8 +1,5 @@
-from __future__ import division, print_function, absolute_import
-
 from os.path import join, dirname
 import sys
-import os
 import glob
 
 
@@ -23,7 +20,7 @@ def configuration(parent_package='',top_path=None):
 
     superlu_src = join(dirname(__file__), 'SuperLU', 'SRC')
 
-    sources = list(glob.glob(join(superlu_src, '*.c')))
+    sources = sorted(glob.glob(join(superlu_src, '*.c')))
     headers = list(glob.glob(join(superlu_src, '*.h')))
 
     config.add_library('superlu_src',
